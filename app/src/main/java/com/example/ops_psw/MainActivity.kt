@@ -3,6 +3,7 @@ package com.example.ops_psw
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
@@ -82,17 +83,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpIconDirections(p: GeoPoint?) {
-        drawLines(p)
-        val markerIcon = Marker(binding.map)
-        markerIcon.position = p
-        val drawable =
-            ContextCompat.getDrawable(this@MainActivity, R.drawable.dot)
-        markerIcon.icon = drawable
-        markerIcon.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
-        markerIcon.title = "Icon"
-        binding.map.overlays.add(markerIcon)
-        icons.add(markerIcon)
-        binding.map.invalidate()
+        if (logoPosition == null) {
+            Toast.makeText(
+                this,
+                getString(R.string.put_the_mark),
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            drawLines(p)
+            val markerIcon = Marker(binding.map)
+            markerIcon.position = p
+            val drawable =
+                ContextCompat.getDrawable(this@MainActivity, R.drawable.dot)
+            markerIcon.icon = drawable
+            markerIcon.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
+            markerIcon.title = "Icon"
+            binding.map.overlays.add(markerIcon)
+            icons.add(markerIcon)
+            binding.map.invalidate()
+        }
+
     }
 
     private fun drawLines(p: GeoPoint?) {
