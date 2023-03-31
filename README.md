@@ -6,4 +6,7 @@
 4. При смене режима точки и ведущие линии удаляются, а логотип PSW остаётся.
 Технологии: osmdroid, osmbonuspack, viewBinding
 
+Ссылка с демонстрацией работы в формате видео:
+https://drive.google.com/drive/folders/15QD_TNhL-w1kR6twrjQVWyT-P2bIxBRz?usp=sharing
+
 Возможно код не особо изящен, но старался немного структурировать :)
