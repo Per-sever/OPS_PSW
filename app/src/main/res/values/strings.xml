@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">OPS_PSW</string>
+    <string name="to_center_btn">К центру</string>
+    <string name="btn_direction">Направления</string>
+
+</resources>
